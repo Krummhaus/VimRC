@@ -14,7 +14,7 @@ set relativenumber
 " MAP LEADER
 "let mapleader = ","
 let mapleader = "\<Space>"
-noremap <leader>w :<cr>
+noremap <leader>w :w<cr>
 
 nnoremap ; :
 
