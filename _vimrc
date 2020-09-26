@@ -9,8 +9,13 @@ filetype plugin indent on
 
 set noswapfile
 set relativenumber
-set number
-let mapleader = ","
+"set number
+
+" MAP LEADER
+"let mapleader = ","
+let mapleader = "\<Space>"
+noremap <leader>w :<cr>
+
 nnoremap ; :
 
 " Bind 'jj' to <esc> to jump out of insert mode
