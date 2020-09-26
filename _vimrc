@@ -1,19 +1,28 @@
-filetype off
-syntax enable
-filetype plugin indent on
+" Use Vim settings, rather then Vi settings.
+" This must be first, because it changes other options and side effects.
 set nocompatible
+
+" Automatic syntax recognition
+syntax enable
+
+filetype plugin indent on
+
 set noswapfile
 set relativenumber
 set number
 let mapleader = ","
 nnoremap ; :
+
+" Bind 'jj' to <esc> to jump out of insert mode
 inoremap jj <ESC>
+
+" Font, encoding and colorscheme
 colorscheme desert
 set encoding=utf-8
 set guifont=Anonymous\ Pro:h11
+
 nmap <F3> i<C-R>=strftime("%d-%m-%Y %a %H:%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%d-%m-%Y %a %H:%M")<CR>
-imap <C-8> á
 
 " Commenting blocks of code.
 augroup commenting_blocks_of_code
@@ -27,4 +36,6 @@ augroup commenting_blocks_of_code
 augroup END
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cv :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Set 'Yank' to go in systm Clipboard and Ctrl-C to Vim 'p' command
 set clipboard=unnamed
